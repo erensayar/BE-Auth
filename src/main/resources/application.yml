@@ -1,0 +1,4 @@
+security:
+  jwt:
+    private-key: @nk@ra_b3n1_bulsun_ad78aA3fDe
+    expire-time: 720000 # 120 minutes -> 120 * 60 * 1000
