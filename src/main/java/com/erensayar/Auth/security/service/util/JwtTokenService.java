@@ -1,4 +1,4 @@
-package com.erensayar.Auth.security.service;
+package com.erensayar.Auth.security.service.util;
 
 import com.erensayar.Auth.security.model.entity.User;
 import io.jsonwebtoken.Claims;

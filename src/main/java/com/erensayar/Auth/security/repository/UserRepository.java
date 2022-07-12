@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-  Optional<User> findByEmail(String email); // TODO: usernameden giriş değil de ail ile giris yapilacak
+  Optional<User> findByEmail(String email); // TODO: usernameden giriş değil de mail ile giris yapilmali
 
   Boolean existsByEmail(String email);
 

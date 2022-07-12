@@ -10,7 +10,7 @@ spring:
     url: jdbc:h2:mem:auth
     username: sa
   main:
-    allow-bean-definition-overriding: true #TODO : REMOVE
+    allow-bean-definition-overriding: true # for MethodSecurityConfig.java
 
 api:
   token:

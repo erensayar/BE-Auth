@@ -17,14 +17,12 @@ public class TestController {
   }
 
   @GetMapping("/user")
-  //@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
   @PreAuthorize(value = "hasAnyAuthority('USER','ADMIN')")
   public String userAccess() {
     return "User Content.";
   }
 
   @GetMapping("/admin")
-  //@PreAuthorize("hasRole('ADMIN')")
   @PreAuthorize(value = "hasAnyAuthority('ADMIN')")
   public String adminAccess() {
     return "Admin Board.";

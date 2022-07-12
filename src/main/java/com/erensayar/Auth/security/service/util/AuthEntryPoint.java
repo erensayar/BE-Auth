@@ -1,4 +1,4 @@
-package com.erensayar.Auth.security.service;
+package com.erensayar.Auth.security.service.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

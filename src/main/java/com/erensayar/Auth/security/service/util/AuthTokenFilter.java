@@ -1,4 +1,4 @@
-package com.erensayar.Auth.security.service;
+package com.erensayar.Auth.security.service.util;
 
 import com.erensayar.Auth.security.model.entity.User;
 import java.io.IOException;
@@ -54,7 +54,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
       return headerAuth.substring(7);
     }
-    return null; // TODO : Throw error
+    return null;
   }
 }
 

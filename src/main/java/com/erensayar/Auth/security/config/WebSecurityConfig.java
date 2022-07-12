@@ -1,8 +1,8 @@
 package com.erensayar.Auth.security.config;
 
-import com.erensayar.Auth.security.service.AuthEntryPoint;
-import com.erensayar.Auth.security.service.AuthTokenFilter;
-import com.erensayar.Auth.security.service.UserDetailsServiceImpl;
+import com.erensayar.Auth.security.service.util.AuthEntryPoint;
+import com.erensayar.Auth.security.service.util.AuthTokenFilter;
+import com.erensayar.Auth.security.service.util.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,8 +20,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-    // securedEnabled = true,
-    // jsr250Enabled = true, // TODO: Open these
+    securedEnabled = true,
+    jsr250Enabled = true,
     prePostEnabled = true)
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -31,9 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   // TODO: I should take as dynamic
   private static final String[] AUTH_WHITELIST = {
+      // "/h2-console/**",
       "/swagger-ui.html",
-      "/swagger-ui/**",
-      "/h2-console/**" // TODO: Remove
+      "/swagger-ui/**"
   };
 
   @Override
@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(AUTH_WHITELIST).permitAll()
         .anyRequest().authenticated();
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-    http.headers().frameOptions().disable(); // For development (H2 DB can be Visible From Browser)
+    // http.headers().frameOptions().disable(); // For development (H2 DB can be Visible From Browser)
   }
 
   @Bean
