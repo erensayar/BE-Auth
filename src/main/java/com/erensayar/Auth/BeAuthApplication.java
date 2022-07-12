@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BeAuthApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BeAuthApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(BeAuthApplication.class, args);
+  }
 
 }
