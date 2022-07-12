@@ -47,11 +47,6 @@ public class JwtTokenService {
     return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
   }
 
-  // public boolean isValidate(String token) {
-  //   return getUserNameFromJwtToken(token) != null && isExpired(token);
-  // }
-
-
   public boolean validateJwtToken(String authToken) {
     try {
       Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
