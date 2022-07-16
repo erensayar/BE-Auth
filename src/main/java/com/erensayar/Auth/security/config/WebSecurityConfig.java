@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private final UserDetailsServiceImpl userDetailsService;
   private final AuthEntryPoint unauthorizedHandler;
 
-  // TODO: I should take as dynamic
+  // TODO: I should take from config files or something. They should taken from user by use this module.
   private static final String[] AUTH_WHITELIST = {
       // "/h2-console/**",
       "/swagger-ui.html",

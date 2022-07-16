@@ -18,7 +18,6 @@ public class SignupRequest {
   @Column(name = "username", length = 50)
   private String username;
 
-  //@UniqueEmail // TODO: Bunun validatorını core'a al. Annotation package'ı komple core'a alınmalı.
   @Email
   @NotNull(message = "{api.constraint.message.email.not-null}")
   @Size(message = "{api.constraint.message.email.size}", min = 8, max = 50)
